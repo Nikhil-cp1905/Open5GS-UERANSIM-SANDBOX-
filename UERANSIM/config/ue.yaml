@@ -1,0 +1,74 @@
+# Open5GS UE Configuration (v3.2.7)
+
+# UE Identity
+supi: 'imsi-001010000000001'
+mcc: '001'
+mnc: '01'
+
+# USIM Authentication (must match UDM/AUSF database)
+imsi: '001010000000001'
+key: '465b5ce8b199b49faa5f0a2ee238a6bc'  # 128-bit key in hex
+op: '981d464c7c52eb6e5036234984ad0bcf'   # 128-bit OP/OPC in hex
+opType: 'OPC'                             # Specify if OP or OPC is used
+
+# DNN (Data Network Name) and S-NSSAI (Slice info)
+dnn: 'internet'
+snssai:
+  sst: 1
+  sd: '010203'
+
+# AMF Selection
+amf: '0102'  # 2-byte AMF region ID in hex
+amfConfigs:
+  - address: 127.0.0.2
+    port: 38412
+
+# gNodeB search list (local loopback for testing)
+gnbSearchList:
+  - '127.0.0.1'
+
+# UAC Access Identities Configuration
+uacAic:
+  mps: false
+  mcs: false
+
+# Slice Configuration
+slices:
+  - sst: 1
+    sd: '010203'
+
+# UE Capabilities (MUST BE UPPERCASE)
+integrity:
+  IA1: true
+  IA2: true
+  IA3: true
+
+ciphering:
+  EA1: true
+  EA2: true
+  EA3: true
+
+# UAC Access Control Class
+uacAcc:
+  normalClass: 0
+  class11: false
+  class12: false
+  class13: false
+  class14: false
+  class15: false
+
+# Supported Integrity Algorithms
+integrity:
+  ia1: true
+  ia2: true
+  ia3: true
+
+# Supported Ciphering Algorithms
+ciphering:
+  ea1: true
+  ea2: true
+  ea3: true
+
+integrityMaxRate:
+  uplink: 'full'
+  downlink: 'full'

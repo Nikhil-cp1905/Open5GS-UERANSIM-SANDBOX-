@@ -1,0 +1,26 @@
+mcc: '001'                  # Mobile Country Code
+mnc: '01'                   # Mobile Network Code
+
+nci: '0x1'                  # gNB ID (NR Cell Identity)
+idLength: 32                # gNB ID length in bits
+
+tac: 1                      # Tracking Area Code
+
+linkIp: 127.0.0.1           # gNB local IP for N2 interface (NGAP)
+ngapIp: 127.0.0.1           # gNB local IP for N2 interface (NGAP)
+gtpIp: 127.0.0.1            # gNB local IP for N3 interface (GTP-U)
+
+ignoreStreamIds: true       # Whether to ignore SCTP stream IDs
+
+# Network slices configuration - at least one slice is required
+slices:
+  - sst: 1                  # Slice/Service Type (e.g., 1 for eMBB)
+    # sd: '010203'            # Slice Differentiator (optional, 3-byte hex string)
+
+amfConfigs:
+  - address: 127.0.0.2      # AMF IP address
+    port: 38412             # AMF port
+
+# Optional logging level (DEBUG/INFO/WARN/ERROR)
+logLevel: INFO
+
